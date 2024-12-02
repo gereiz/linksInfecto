@@ -25,9 +25,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('/topicos', [TopicoController::class, 'index'])->name('topicos');
 
-Route::get('/topicos/{id}', [TopicoController::class, 'getTopico'])->name('topico');
+route::get('/topicos', [TopicoController::class, 'index'])->name('topicos');
+route::any('/topico/{id}', [TopicoController::class, 'getTopico'])->name('web.topico');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
