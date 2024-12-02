@@ -11,5 +11,5 @@ Route::get('/user', function (Request $request) {
 
 Route::prefix('v1')->group(function () {
     route::get('/topicos', [TopicoController::class, 'index'])->name('topicos');
-    route::post('topico', [TopicoController::class, 'getTopico'])->name('topico');
+    route::any('topico', [TopicoController::class, 'getTopico'])->name('topico');
 });
