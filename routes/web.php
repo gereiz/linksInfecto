@@ -27,7 +27,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/topicos', [TopicoController::class, 'index'])->name('topicos');
 
-Route::any('/topico/{id}', [TopicoController::class, 'getTopico'])->name('topico');
+Route::get('/topicos/{id}', [TopicoController::class, 'getTopico'])->name('topico');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

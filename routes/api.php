@@ -8,7 +8,8 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
+
 Route::prefix('v1')->group(function () {
-    Route::get('/topicos', [TopicoController::class, 'index'])->name('topicos');
-    Route::any('/topico/{id}', [TopicoController::class, 'getTopico'])->name('topico');
+    route::get('/topicos', [TopicoController::class, 'index'])->name('topicos');
+    route::post('topico', [TopicoController::class, 'getTopico'])->name('topico');
 });

@@ -49,9 +49,12 @@ class TopicoController extends Controller
         return response()->json($topicosArray, 200);
     }
 
-    public function getTopico($id)
+    public function getTopico(Request $request)
     {
+
+        $id = $request->id;
         $topico = $this->connection->getDocument('topics/'.$id);
+
 
         $topicoObj = (object) [
             $title = $topico->get('title'),
@@ -60,8 +63,8 @@ class TopicoController extends Controller
             $content = $topico->get('content'),
         ];
 
-        // dd($topicoObj);
 
         return response()->json($topicoObj, 200);
     }
+
 }
