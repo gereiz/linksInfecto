@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use MrShan0\PHPFirestore\FirestoreClient;
+use stdClass;
 
 class TopicoController extends Controller
 {
@@ -56,12 +57,13 @@ class TopicoController extends Controller
         $topico = $this->connection->getDocument('topics/'.$id);
 
 
-        $topicoObj = (object) [
-            $title = $topico->get('title'),
-            $id = substr($topico->getRelativeName(), 8),
-            $id_subcategory = $topico->get('id_subcategory')->getData(),
-            $content = $topico->get('content'),
-        ];
+        $topicoObj = new stdClass;
+
+        $topicoObj->title = $topico->get('title');
+        $topicoObj->id = substr($topico->getRelativeName(), 8);
+        $topicoObj->id_subcategory = $topico->get('id_subcategory')->getData();
+        $topicoObj->content = $topico->get('content');
+
 
 
         return response()->json($topicoObj, 200);
