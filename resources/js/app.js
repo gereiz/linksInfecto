@@ -1,4 +1,4 @@
-import '../css/app.css';
+// import '../css/app.css';
 import './bootstrap';
 import 'flowbite';
 import DataTablesLib from 'datatables.net';
