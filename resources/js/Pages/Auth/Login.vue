@@ -29,6 +29,8 @@ const submit = () => {
 };
 </script>
 
+<style src="resources/css/app.css"></style>
+
 <template>
     <GuestLayout>
         <Head title="Log in" />
