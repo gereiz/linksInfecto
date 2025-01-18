@@ -1,6 +1,5 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
-
 defineProps({
     canLogin: {
         type: Boolean,
@@ -25,6 +24,9 @@ function handleImageError() {
     document.getElementById('background')?.classList.add('!hidden');
 }
 </script>
+
+<style src="resources/css/app.css"></style>
+
 
 <template>
     <Head title="Welcome" />
@@ -384,3 +386,4 @@ function handleImageError() {
         </div>
     </div>
 </template>
+
