@@ -1,7 +1,10 @@
 @import '../css/dataTables.min.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 /* add the code bellow */
 @layer utilities {
@@ -14,4 +17,7 @@
           -ms-overflow-style: none;  /* IE and Edge */
           scrollbar-width: none;  /* Firefox */
     }
+
   }
+
+

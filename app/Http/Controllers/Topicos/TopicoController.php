@@ -58,10 +58,9 @@ class TopicoController extends Controller
             $title = $topico->get('title'),
             $id = substr($topico->getRelativeName(), 8),
             $id_subcategory = $topico->get('id_subcategory')->getData(),
-            $content = $topico->get('content'),
-        ];
+            $content = str_replace('font-family: verdana, geneva, sans-serif;', '', $topico->get('content')),
 
-        // dd($topicoObj);
+        ];
 
         return Inertia::render('Topicos/SingleTopico', compact('topicoObj'));
     }
